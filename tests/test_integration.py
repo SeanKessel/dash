@@ -545,7 +545,9 @@ class Tests(IntegrationTests):
             if value is None:
                 raise PreventUpdate
 
-            return dcc.Input(id='inserted-input')
+            import dash_extra_components as dec
+
+            return dec.SuggestionsInput(suggestions=[], id='inserted-input')
 
         self.startServer(app)
 
